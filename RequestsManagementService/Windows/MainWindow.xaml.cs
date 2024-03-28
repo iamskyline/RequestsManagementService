@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using RequestsManagementService.Windows.RolesWindows;
 
 namespace RequestsManagementService.Windows
 {
@@ -10,6 +12,13 @@ namespace RequestsManagementService.Windows
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SignInButton_OnClick(Object sender, RoutedEventArgs e)
+        {
+            AdminRequestsWindow window = new AdminRequestsWindow();
+            window.Show();
+            this.Close();
         }
     }
 }

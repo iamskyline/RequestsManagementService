@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace RequestsManagementService.Windows.RolesWindows
 {
@@ -10,6 +11,23 @@ namespace RequestsManagementService.Windows.RolesWindows
         public PerformerRequestsWindow()
         {
             InitializeComponent();
+        }
+        
+        private void GetRequestDetailsButton_OnClick(Object sender, RoutedEventArgs e)
+        {
+            RequestInfoWindow window = new RequestInfoWindow();
+            window.ShowDialog();
+        }
+
+        private void GetToWorkButton_OnClick(Object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
+        {
+            //сбросить пользователя
+            this.Close();
         }
     }
 }

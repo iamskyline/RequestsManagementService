@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RequestsManagementService.Windows"
         mc:Ignorable="d"
-        Title="Подробная информация о заявке" Height="450" Width="800">
+        Title="Подробная информация о заявке"
+        MinHeight="350" MinWidth="450"
+        Height="450" Width="800">
     <Grid>
         
     </Grid>
