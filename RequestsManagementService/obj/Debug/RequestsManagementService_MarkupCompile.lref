@@ -1,8 +1,9 @@
 ﻿
 
-FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\Windows\CreatingOrEditingRequestWindow.xaml;;
-FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\Windows\RequestInfoWindow.xaml;;
-FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\Windows\RolesWindows\AdminRequestsWindow.xaml;;
-FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\Windows\MainWindow.xaml;;
-FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\Windows\RolesWindows\PerformerRequestsWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\MainWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\RolesWindows\ClientCreatingRequestWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\RolesWindows\ManagerWindows\ManagerEditingRequestWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\RolesWindows\ManagerWindows\ManagerRequestsWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml;;
+FC:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\AppWindows\StatisticsWindow.xaml;;
 

@@ -64,28 +64,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\CreatingOrEditingRequestWindow.xaml.cs">
+    <Compile Include="AppWindows\RequestWindows\CreatingOrEditingRequestWindow.xaml.cs">
       <DependentUpon>CreatingOrEditingRequestWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\RequestInfoWindow.xaml.cs">
+    <Compile Include="AppWindows\RequestWindows\RequestInfoWindow.xaml.cs">
       <DependentUpon>RequestInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\RolesWindows\PerformerRequestsWindow.xaml.cs">
+    <Compile Include="AppWindows\RolesWindows\ClientCreatingRequestWindow.xaml.cs">
+      <DependentUpon>ClientCreatingRequestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppWindows\RolesWindows\ManagerWindows\ManagerEditingRequestWindow.xaml.cs">
+      <DependentUpon>ManagerEditingRequestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppWindows\RolesWindows\ManagerWindows\ManagerRequestsWindow.xaml.cs">
+      <DependentUpon>ManagerRequestsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml.cs">
+      <DependentUpon>PerformerCommentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.xaml.cs">
       <DependentUpon>PerformerRequestsWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Windows\CreatingOrEditingRequestWindow.xaml">
+    <Page Include="AppWindows\RequestWindows\CreatingOrEditingRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\RequestInfoWindow.xaml">
+    <Page Include="AppWindows\RequestWindows\RequestInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\RolesWindows\AdminRequestsWindow.xaml">
+    <Page Include="AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MainWindow.xaml">
+    <Page Include="AppWindows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,19 +105,42 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Windows\RolesWindows\AdminRequestsWindow.xaml.cs">
+    <Compile Include="AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.xaml.cs">
       <DependentUpon>AdminRequestsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MainWindow.xaml.cs">
+    <Compile Include="AppWindows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\RolesWindows\PerformerRequestsWindow.xaml">
+    <Page Include="AppWindows\RolesWindows\ClientCreatingRequestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RolesWindows\ManagerWindows\ManagerEditingRequestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RolesWindows\ManagerWindows\ManagerRequestsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\StatisticsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppWindows\StatisticsWindow.xaml.cs">
+      <DependentUpon>StatisticsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ExecutionRequests.cs">
       <DependentUpon>RequestsManagementModel.tt</DependentUpon>
     </Compile>

@@ -1,0 +1,173 @@
+﻿<Window x:Class="RequestsManagementService.AppWindows.RequestWindows.RequestInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Подробная информация о заявке"
+        MinHeight="450" MinWidth="650"
+        Height="450" Width="800" FontSize="18">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".25*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="1"
+                   Text="Информация о заявке"
+                   FontSize="30"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0"
+                          VerticalScrollBarVisibility="Hidden"
+                          x:Name="TitlesScrollViewer"
+                          ScrollChanged="TitlesScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <TextBlock Text="Номер заявки:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" 
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Клиент:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" 
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Статус заявки:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Ремонтируемое оборудование:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Выявленная поломка:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Описание проблемы:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Комментарий исполнителя:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Дата формирования заявки:"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+                </ItemsControl>
+            </ScrollViewer >
+
+            <ScrollViewer Grid.Column="1"
+                          VerticalScrollBarVisibility="Auto"
+                          x:Name="DataScrollViewer"
+                          ScrollChanged="DataScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <TextBlock Text="№1" Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="ФИО"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Статус"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Название оборудования"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Поломка"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Описание проблемы"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Комментарий исполнителя"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+
+                    <TextBlock Text="Дата"
+                               Margin="20"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <Button Grid.Row="2" Grid.Column="1"
+            x:Name="GoBackButton"
+            Content="Вернуться назад"
+            Margin="20 10"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            Padding="5"
+            Click="GoBackButton_OnClick"
+        />
+
+    </Grid>
+</Window>

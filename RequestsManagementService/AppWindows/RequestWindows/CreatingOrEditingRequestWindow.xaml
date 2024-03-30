@@ -1,0 +1,134 @@
+﻿<Window x:Class="RequestsManagementService.AppWindows.RequestWindows.CreatingOrEditingRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Создание / Редактирование заявки"
+        MinHeight="350" MinWidth="450"
+        Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".25*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Text="Создание / Редактирование заявки"
+                   FontSize="30"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Выберите клиента:"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" 
+                       TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Выберите статус заявки:"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" 
+                       Text="Заполните поле 'Оборудование':"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" 
+                       Text="Заполните поле 'Поломка':"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" 
+                       Text="Заполните поле 'Предполагаемая дата окончания работ':"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" 
+                       Text="Заполните поле 'Описание проблемы':"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"/>
+            
+            <ComboBox Grid.Row="0" Grid.Column="1"
+                     Margin="15" DisplayMemberPath=""/>
+            <ComboBox Grid.Row="1" Grid.Column="1"
+                      Margin="15" DisplayMemberPath=""/>
+            <TextBox Grid.Row="2" Grid.Column="1"
+                     Margin="15"
+                     VerticalAlignment="Center"
+                     FontSize="18"/>
+            <TextBox Grid.Row="3" Grid.Column="1"
+                     Margin="15"
+                     VerticalAlignment="Center"
+                     FontSize="18"/>
+            <TextBox Grid.Row="4" Grid.Column="1"
+                     Margin="15"
+                     VerticalAlignment="Center"
+                     FontSize="18"/>
+            <RichTextBox Grid.Row="5" Grid.Column="1"
+                     Margin="15 5"
+                     VerticalScrollBarVisibility="Auto">
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0,2,0,0"/>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button 
+                    x:Name="GoBackButton"
+                    Content="Вернуться назад"
+                    Margin="20 10"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Padding="5"
+                    Click="GoBackButton_OnClick"/>
+
+            <Button Grid.Column="1"
+                x:Name="CreateRequestButton"
+                Content="Сохранить заявку"
+                Margin="20 10"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                Padding="5"
+                Click="SaveRequestButton_OnClick"/>
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="RequestsManagementService.AppWindows.RolesWindows.PerformerWindows.PerformerCommentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.PerformerWindows"
+        mc:Ignorable="d"
+        Title="Комментарий к заявке"
+        MinHeight="350" MinWidth="400"
+        Height="350" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+            <TextBlock Text="Оставьте комментарий:"
+                       FontSize="20"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="0 10 0 0"
+                       DockPanel.Dock="Top"/>
+
+            <RichTextBox Margin="20"
+                         VerticalScrollBarVisibility="Auto"
+                         FontSize="16">
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0,2,0,0"/>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+
+        </DockPanel>
+
+        <Button Grid.Row="1"
+                x:Name="SaveCommentButton"
+                Content="Сохранить"
+                Margin="100 10"
+                FontSize="16"
+                MaxWidth="200"
+                MaxHeight="50"
+                Click="SaveCommentButton_OnClick"/>
+    </Grid>
+</Window>
