@@ -284,6 +284,8 @@
                          Margin="30 0"
                          VerticalAlignment="Center"
                          FontSize="18"
+                         MaxWidth="250"
+                         MaxHeight="50"
                          TextChanged="SearchTextBox_OnTextChanged"/>
             </StackPanel>
 
@@ -299,7 +301,7 @@
 
             <Button x:Name="OpenStatisticsButton"
                     Grid.Column="2"
-                    Content="Смотреть статистику"
+                    Content="Открыть статистику"
                     Margin="10 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"

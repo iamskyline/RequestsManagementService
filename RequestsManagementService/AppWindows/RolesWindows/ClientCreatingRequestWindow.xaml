@@ -41,29 +41,36 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" 
                        Text="Заполните поле 'Оборудование':"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap"
+                       FontSize="18"/>
             <TextBlock Grid.Row="1" Grid.Column="0" 
                        Text="Заполните поле 'Поломка':"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap"
+                       FontSize="18"/>
             <TextBlock Grid.Row="2" Grid.Column="0" 
                        Text="Заполните поле 'Описание проблемы':"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap"
+                       FontSize="18"/>
 
             <TextBox Grid.Row="0"
                      Grid.Column="1"
-                     Margin="40"
+                     Margin="10 0"
                      VerticalAlignment="Center"
+                     MaxWidth="250"
+                     MaxHeight="50"
                      FontSize="18"/>
             <TextBox Grid.Row="1"
                      Grid.Column="1"
-                     Margin="40"
+                     Margin="10 0"
                      VerticalAlignment="Center"
+                     MaxWidth="250"
+                     MaxHeight="50"
                      FontSize="18"/>
             <RichTextBox Grid.Row="2"
                          Grid.Column="1"
@@ -81,12 +88,14 @@
       
             <Button Grid.Row="2" Grid.Column="1"
                     x:Name="CreateRequestButton"
-                    Content="Создать заявку"
+                    Content="Отправить заявку"
                     Margin="20 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    FontSize="16"
+                    FontSize="22"
                     Padding="5"
+                    MaxWidth="200"
+                    MaxHeight="50"
                     Click="CreateRequestButton_OnClick"
             />
 

@@ -9,9 +9,11 @@ C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManage
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.csproj.AssemblyReference.cache
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RequestWindows\CreatingOrEditingRequestWindow.baml
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RequestWindows\RequestInfoWindow.baml
+C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.baml
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.baml
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RequestWindows\CreatingOrEditingRequestWindow.g.cs
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RequestWindows\RequestInfoWindow.g.cs
+C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.g.cs
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\MainWindow.g.cs
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\ClientCreatingRequestWindow.g.cs
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\ManagerWindows\ManagerEditingRequestWindow.g.cs
@@ -36,5 +38,3 @@ C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManage
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.csproj.CopyComplete
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.exe
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.pdb
-C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.baml
-C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.g.cs

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Создание / Редактирование заявки"
-        MinHeight="350" MinWidth="450"
-        Height="450" Width="800">
+        MinHeight="570" MinWidth="800"
+        Height="570" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>
@@ -33,72 +33,101 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <ScrollViewer Grid.Column="0"
+                          VerticalScrollBarVisibility="Hidden"
+                          x:Name="TitlesScrollViewer"
+                          ScrollChanged="TitlesScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <TextBlock Text="Выберите клиента:"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center" 
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Выберите статус заявки:"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Оборудование':"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Поломка':"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Описание проблемы':"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                </ItemsControl>
+            </ScrollViewer >
 
-            <TextBlock Grid.Row="0" Grid.Column="0"
-                       Text="Выберите клиента:"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" 
-                       TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="1" Grid.Column="0"
-                       Text="Выберите статус заявки:"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" 
-                       Text="Заполните поле 'Оборудование':"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" 
-                       Text="Заполните поле 'Поломка':"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" 
-                       Text="Заполните поле 'Предполагаемая дата окончания работ':"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextAlignment="Center"
-                       TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" 
-                       Text="Заполните поле 'Описание проблемы':"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextWrapping="Wrap"/>
-            
-            <ComboBox Grid.Row="0" Grid.Column="1"
-                     Margin="15" DisplayMemberPath=""/>
-            <ComboBox Grid.Row="1" Grid.Column="1"
-                      Margin="15" DisplayMemberPath=""/>
-            <TextBox Grid.Row="2" Grid.Column="1"
-                     Margin="15"
-                     VerticalAlignment="Center"
-                     FontSize="18"/>
-            <TextBox Grid.Row="3" Grid.Column="1"
-                     Margin="15"
-                     VerticalAlignment="Center"
-                     FontSize="18"/>
-            <TextBox Grid.Row="4" Grid.Column="1"
-                     Margin="15"
-                     VerticalAlignment="Center"
-                     FontSize="18"/>
-            <RichTextBox Grid.Row="5" Grid.Column="1"
-                     Margin="15 5"
-                     VerticalScrollBarVisibility="Auto">
-                <RichTextBox.Resources>
-                    <Style TargetType="{x:Type Paragraph}">
-                        <Setter Property="Margin" Value="0,2,0,0"/>
-                    </Style>
-                </RichTextBox.Resources>
-            </RichTextBox>
+            <ScrollViewer Grid.Column="1"
+                          VerticalScrollBarVisibility="Auto"
+                          x:Name="InputsScrollViewer"
+                          ScrollChanged="InputsScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <ComboBox Margin="15 20"
+                              DisplayMemberPath=""
+                              MaxHeight="30"
+                              MaxWidth="250"/>
+                    <ComboBox Margin="15 20"
+                              DisplayMemberPath=""
+                              MaxWidth="250"
+                              MaxHeight="30"/>
+                    <TextBox Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+                    <TextBox Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="0 20">
+                        <DatePicker x:Name="NewDayDatePicker"
+                                    FontSize="16"
+                                    Margin="0 0 0 10">
+                        </DatePicker>
+
+                        <TextBlock Text="Введите время в формате '00:00'"
+                                   FontSize="16"
+                                   TextWrapping="Wrap"
+                                   Margin="0 0 0 5"/>
+                        <TextBox x:Name="NewTimeTextBox" FontSize="16"/>
+                    </StackPanel>
+
+                    <RichTextBox MaxWidth="250"
+                                 MaxHeight="100"
+                                 Margin="5 20"
+                                 VerticalScrollBarVisibility="Auto">
+                        <RichTextBox.Resources>
+                            <Style TargetType="{x:Type Paragraph}">
+                                <Setter Property="Margin" Value="0,2,0,0"/>
+                            </Style>
+                        </RichTextBox.Resources>
+                    </RichTextBox>
+                </ItemsControl>
+            </ScrollViewer>
 
         </Grid>
 

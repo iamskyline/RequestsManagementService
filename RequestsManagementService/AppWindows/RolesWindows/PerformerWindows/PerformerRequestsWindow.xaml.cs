@@ -29,6 +29,8 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
         {
             //сбросить пользователя
+            MainWindow window = new MainWindow();
+            window.Show();
             this.Close();
         }
 

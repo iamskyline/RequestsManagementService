@@ -5,8 +5,108 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.ManagerWindows"
         mc:Ignorable="d"
-        Title="Изменение информации о заявке" Height="450" Width="800">
+        Title="Изменение информации о заявке"
+        MinHeight="350" MinWidth="550"
+        Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                   Text="Изменение данных заявки"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+        />
+
+        <Grid Grid.Column="1" Grid.Row="1"
+              Margin="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0"
+                       Text="Изменение планируемой даты завершения работ:"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+            />
+
+            <TextBlock Grid.Column="0" Grid.Row="1"
+                       Text="Добавить исполнителя к заявке:"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+            />
+
+            <StackPanel Grid.Column="1" Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <DatePicker x:Name="NewDayDatePicker"
+                            FontSize="16"
+                            Margin="0 0 0 10">
+                </DatePicker>
+
+                <TextBlock Text="Введите время в формате '00:00'"
+                           FontSize="16"
+                           TextWrapping="Wrap"
+                           Margin="0 0 0 5"/>
+                <TextBox x:Name="NewTimeTextBox" FontSize="16"/>
+            </StackPanel>
+
+            <ComboBox x:Name="PerformerComboBox"
+                      Grid.Row="1" Grid.Column="1"
+                      MaxWidth="200"
+                      MaxHeight="40"
+            />
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="SaveButton" Grid.Column="0"
+                    Margin="10"
+                    MaxWidth="200"
+                    MaxHeight="50"
+                    FontSize="18"
+                    Content="Сохранить"
+                    Click="SaveButton_OnClick"
+            />
+
+            <Button x:Name="GoBackButton" Grid.Column="1"
+                    Margin="10"
+                    MaxWidth="200"
+                    MaxHeight="50"
+                    FontSize="18"
+                    Content="Назад"
+                    Click="GoBackButton_OnClick"
+            />
+
+        </Grid>
     </Grid>
 </Window>

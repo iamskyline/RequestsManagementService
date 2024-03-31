@@ -15,7 +15,7 @@ namespace RequestsManagementService.AppWindows
 
         private void GoBackButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            this.Close();
         }
     }
 }

@@ -27,7 +27,9 @@
 
             <RichTextBox Margin="20"
                          VerticalScrollBarVisibility="Auto"
-                         FontSize="16">
+                         FontSize="16"
+                         MaxWidth="500"
+                         MaxHeight="300">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
                         <Setter Property="Margin" Value="0,2,0,0"/>

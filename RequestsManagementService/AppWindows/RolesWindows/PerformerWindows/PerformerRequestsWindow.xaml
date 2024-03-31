@@ -267,6 +267,8 @@
                          Margin="30 0"
                          VerticalAlignment="Center"
                          FontSize="18"
+                         MaxWidth="250"
+                         MaxHeight="50"
                          TextChanged="SearchTextBox_OnTextChanged"/>
             </StackPanel>
             

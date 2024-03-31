@@ -164,7 +164,7 @@
             Margin="20 10"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            FontSize="16"
+            FontSize="22"
             Padding="5"
             Click="GoBackButton_OnClick"
         />

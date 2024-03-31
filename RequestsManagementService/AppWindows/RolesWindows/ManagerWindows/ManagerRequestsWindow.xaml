@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.ManagerWindows"
         mc:Ignorable="d"
         Title="Заявки"
+        MinHeight="350" MinWidth="550"
         Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -90,14 +91,14 @@
                                 Click="GetRequestDetailsButton_OnClick"
                         />
 
-                        <Button x:Name="GetToWorkButton"
+                        <Button x:Name="ChangeRequestDataButton"
                                 Content="Изменить данные"
                                 Margin="20 10"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Right"
                                 FontSize="20"
                                 Padding="5"
-                                Click="GetToWorkButton_OnClick"
+                                Click="ChangeRequestDataButton_OnClick"
                         />
 
                     </StackPanel>
@@ -131,13 +132,15 @@
                          Margin="30 0"
                          VerticalAlignment="Center"
                          FontSize="18"
+                         MaxWidth="250"
+                         MaxHeight="50"
                          TextChanged="SearchTextBox_OnTextChanged"
                 />
             </StackPanel>
 
             <Button x:Name="OpenStatisticsButton"
                     Grid.Column="1"
-                    Content="Смотреть статистику"
+                    Content="Открыть статистику"
                     Margin="10 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
