@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using RequestsManagementService.Models;
 
 namespace RequestsManagementService.AppWindows.RequestWindows
 {
-    /// <summary>
-    /// Логика взаимодействия для RequestInfoWindow.xaml
-    /// </summary>
     public partial class RequestInfoWindow : Window
     {
-        public RequestInfoWindow()
+        private Requests _request;
+
+        public RequestInfoWindow(Requests request)
         {
+            _request = request;
+            DataContext = _request;
             InitializeComponent();
         }
 

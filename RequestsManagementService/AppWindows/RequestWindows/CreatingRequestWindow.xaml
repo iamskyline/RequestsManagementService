@@ -1,10 +1,10 @@
-﻿<Window x:Class="RequestsManagementService.AppWindows.RequestWindows.CreatingOrEditingRequestWindow"
+﻿<Window x:Class="RequestsManagementService.AppWindows.RequestWindows.CreatingRequestWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Создание / Редактирование заявки"
+        Title="Создание заявки"
         MinHeight="570" MinWidth="800"
         Height="570" Width="800">
     <Grid>
@@ -21,7 +21,7 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0"
                    Grid.ColumnSpan="3"
-                   Text="Создание / Редактирование заявки"
+                   Text="Создание новой заявки"
                    FontSize="30"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
@@ -82,20 +82,24 @@
                           x:Name="InputsScrollViewer"
                           ScrollChanged="InputsScrollViewer_OnScrollChanged">
                 <ItemsControl>
-                    <ComboBox Margin="15 20"
+                    <ComboBox x:Name="ClientComboBox"
+                              Margin="15 20"
                               DisplayMemberPath=""
                               MaxHeight="30"
                               MaxWidth="250"/>
-                    <ComboBox Margin="15 20"
+                    <ComboBox x:Name="StatusComboBox"
+                              Margin="15 20"
                               DisplayMemberPath=""
                               MaxWidth="250"
                               MaxHeight="30"/>
-                    <TextBox Margin="15 20"
+                    <TextBox x:Name="EquipmentTextBox"
+                             Margin="15 20"
                              VerticalAlignment="Center"
                              FontSize="18"
                              MaxWidth="250"
                              MaxHeight="50"/>
-                    <TextBox Margin="15 20"
+                    <TextBox x:Name="MalfunctionTextBox"
+                             Margin="15 20"
                              VerticalAlignment="Center"
                              FontSize="18"
                              MaxWidth="250"
@@ -116,7 +120,8 @@
                         <TextBox x:Name="NewTimeTextBox" FontSize="16"/>
                     </StackPanel>
 
-                    <RichTextBox MaxWidth="250"
+                    <RichTextBox x:Name="IssueDescriptionRichTextBox"
+                                 MaxWidth="250"
                                  MaxHeight="100"
                                  Margin="5 20"
                                  VerticalScrollBarVisibility="Auto">
@@ -150,7 +155,7 @@
 
             <Button Grid.Column="1"
                 x:Name="CreateRequestButton"
-                Content="Сохранить заявку"
+                Content="Создать заявку"
                 Margin="20 10"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"

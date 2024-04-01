@@ -4,12 +4,9 @@ using System.Windows.Controls;
 
 namespace RequestsManagementService.AppWindows.RequestWindows
 {
-    /// <summary>
-    /// Логика взаимодействия для CreatingOrEditingRequestWindow.xaml
-    /// </summary>
-    public partial class CreatingOrEditingRequestWindow : Window
+    public partial class CreatingRequestWindow : Window
     {
-        public CreatingOrEditingRequestWindow()
+        public CreatingRequestWindow()
         {
             InitializeComponent();
         }

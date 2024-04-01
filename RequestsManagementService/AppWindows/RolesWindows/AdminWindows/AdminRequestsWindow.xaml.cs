@@ -1,29 +1,29 @@
-﻿using System;
+﻿using RequestsManagementService.AppWindows.RequestWindows;
+using RequestsManagementService.Tools;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using RequestsManagementService.AppWindows.RequestWindows;
+using RequestsManagementService.Models;
 
 namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
 {
-    /// <summary>
-    /// Логика взаимодействия для AdminRequestsWindow.xaml
-    /// </summary>
     public partial class AdminRequestsWindow : Window
     {
         public AdminRequestsWindow()
         {
             InitializeComponent();
+            DbFunctions.LoadRequestsToItemsControl(itemsControl);
         }
 
         private void EditRequestButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            CreatingOrEditingRequestWindow window = new CreatingOrEditingRequestWindow();
+            EditingRequestWindow window = new EditingRequestWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
         }
 
         private void GetRequestDetailsButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            RequestInfoWindow window = new RequestInfoWindow();
+            RequestInfoWindow window = new RequestInfoWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
         }
 
@@ -37,7 +37,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
 
         private void CreateRequestButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            CreatingOrEditingRequestWindow window = new CreatingOrEditingRequestWindow();
+            CreatingRequestWindow window = new CreatingRequestWindow();
             window.ShowDialog();
         }
 

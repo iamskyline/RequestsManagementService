@@ -64,8 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AppWindows\RequestWindows\CreatingOrEditingRequestWindow.xaml.cs">
-      <DependentUpon>CreatingOrEditingRequestWindow.xaml</DependentUpon>
+    <Compile Include="AppWindows\RequestWindows\CreatingRequestWindow.xaml.cs">
+      <DependentUpon>CreatingRequestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppWindows\RequestWindows\EditingRequestWindow.xaml.cs">
+      <DependentUpon>EditingRequestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppWindows\RequestWindows\RequestInfoWindow.xaml.cs">
       <DependentUpon>RequestInfoWindow.xaml</DependentUpon>
@@ -85,7 +88,54 @@
     <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.xaml.cs">
       <DependentUpon>PerformerRequestsWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AppWindows\RequestWindows\CreatingOrEditingRequestWindow.xaml">
+    <Compile Include="Models\ExecutionRequests.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Materials.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestMaterials.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Requests.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestsManagementModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestsManagementModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestsManagementModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestsManagementModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestsManagementModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestWorks.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Statuses.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work.cs">
+      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DbFunctions.cs" />
+    <Page Include="AppWindows\RequestWindows\CreatingRequestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RequestWindows\EditingRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,48 +191,6 @@
     <Compile Include="AppWindows\StatisticsWindow.xaml.cs">
       <DependentUpon>StatisticsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ExecutionRequests.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Materials.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RequestMaterials.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Requests.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RequestsManagementModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RequestsManagementModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RequestsManagementModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RequestsManagementModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RequestsManagementModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RequestWorks.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Roles.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Statuses.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Users.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Work.cs">
-      <DependentUpon>RequestsManagementModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -220,19 +228,19 @@
     <Folder Include="Tools\DbModelExtensions\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\RequestsManagementModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RequestsManagementModel.Context.cs</LastGenOutput>
       <DependentUpon>RequestsManagementModel.edmx</DependentUpon>
+      <LastGenOutput>RequestsManagementModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\RequestsManagementModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RequestsManagementModel.edmx</DependentUpon>
       <LastGenOutput>RequestsManagementModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

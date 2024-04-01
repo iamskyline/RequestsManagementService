@@ -15,6 +15,8 @@ namespace RequestsManagementService.Models
     
     public partial class RequestsManagementEntities : DbContext
     {
+        private static RequestsManagementEntities _data;
+
         public RequestsManagementEntities()
             : base("name=RequestsManagementEntities")
         {
@@ -24,7 +26,16 @@ namespace RequestsManagementService.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        public static RequestsManagementEntities GetContext()
+        {
+            if (_data == null)
+            {
+                _data = new RequestsManagementEntities();
+            }
+            return _data;
+        }
+
         public virtual DbSet<ExecutionRequests> ExecutionRequests { get; set; }
         public virtual DbSet<Materials> Materials { get; set; }
         public virtual DbSet<RequestMaterials> RequestMaterials { get; set; }

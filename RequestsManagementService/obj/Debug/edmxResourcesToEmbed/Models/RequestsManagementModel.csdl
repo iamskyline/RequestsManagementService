@@ -43,9 +43,11 @@
     <Property Name="StatusId" Type="Int32" Nullable="false" />
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Equipment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MalfunctionType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Malfunction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IssueDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="UserDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExpectedCompletionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpectedCompletionTime" Type="Time" Nullable="false" Precision="7" />
     <NavigationProperty Name="ExecutionRequests" Relationship="Self.FK__Execution__Reque__4CA06362" FromRole="Requests" ToRole="ExecutionRequests" />
     <NavigationProperty Name="RequestMaterials" Relationship="Self.FK__RequestMa__Reque__5165187F" FromRole="Requests" ToRole="RequestMaterials" />
     <NavigationProperty Name="Statuses" Relationship="Self.FK__Requests__Status__49C3F6B7" FromRole="Requests" ToRole="Statuses" />

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using RequestsManagementService.AppWindows.RequestWindows;
+using RequestsManagementService.Models;
 
 namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
 {
@@ -17,7 +18,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
         
         private void GetRequestDetailsButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            RequestInfoWindow window = new RequestInfoWindow();
+            RequestInfoWindow window = new RequestInfoWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
         }
 

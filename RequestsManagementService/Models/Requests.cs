@@ -27,9 +27,11 @@ namespace RequestsManagementService.Models
         public int StatusId { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public string Equipment { get; set; }
-        public string MalfunctionType { get; set; }
+        public string Malfunction { get; set; }
         public string IssueDescription { get; set; }
         public string UserDescription { get; set; }
+        public System.DateTime ExpectedCompletionDate { get; set; }
+        public System.TimeSpan ExpectedCompletionTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExecutionRequests> ExecutionRequests { get; set; }

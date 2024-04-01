@@ -38,9 +38,11 @@
     <Property Name="StatusId" Type="int" Nullable="false" />
     <Property Name="CreatedDate" Type="date" Nullable="false" />
     <Property Name="Equipment" Type="varchar(max)" Nullable="false" />
-    <Property Name="MalfunctionType" Type="varchar(max)" Nullable="false" />
+    <Property Name="Malfunction" Type="varchar(max)" Nullable="false" />
     <Property Name="IssueDescription" Type="varchar(max)" />
     <Property Name="UserDescription" Type="varchar(max)" />
+    <Property Name="ExpectedCompletionDate" Type="date" Nullable="false" />
+    <Property Name="ExpectedCompletionTime" Type="time" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="RequestWorks">
     <Key>

@@ -41,9 +41,11 @@
           <ScalarProperty Name="StatusId" ColumnName="StatusId" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Equipment" ColumnName="Equipment" />
-          <ScalarProperty Name="MalfunctionType" ColumnName="MalfunctionType" />
+          <ScalarProperty Name="Malfunction" ColumnName="Malfunction" />
           <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
           <ScalarProperty Name="UserDescription" ColumnName="UserDescription" />
+          <ScalarProperty Name="ExpectedCompletionDate" ColumnName="ExpectedCompletionDate" />
+          <ScalarProperty Name="ExpectedCompletionTime" ColumnName="ExpectedCompletionTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

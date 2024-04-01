@@ -1,0 +1,167 @@
+﻿<Window x:Class="RequestsManagementService.AppWindows.RequestWindows.EditingRequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RequestWindows"
+        mc:Ignorable="d"
+        Title="EditingRequestWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".25*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".25*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Text="Редактирование заявки"
+               FontSize="30"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0"
+                      VerticalScrollBarVisibility="Hidden"
+                      x:Name="TitlesScrollViewer"
+                      ScrollChanged="TitlesScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <TextBlock Text="Выберите клиента:"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center" 
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                    <TextBlock Text="Выберите статус заявки:"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Оборудование':"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Поломка':"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Описание проблемы':"
+                           Margin="0 20"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           TextWrapping="Wrap"/>
+                </ItemsControl>
+            </ScrollViewer >
+            
+            <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto"
+                      x:Name="InputsScrollViewer"
+                      ScrollChanged="InputsScrollViewer_OnScrollChanged">
+                <ItemsControl>
+                    <ComboBox x:Name="ClientComboBox"
+                              Margin="15 20"
+                              MaxHeight="30"
+                              MaxWidth="250"/>
+                    <ComboBox x:Name="StatusComboBox"
+                              Margin="15 20"
+                              MaxWidth="250"
+                              MaxHeight="30"/>
+                    <TextBox x:Name="EquipmentTextBox"
+                             Text="{Binding Equipment}"
+                             Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+                    <TextBox x:Name="MalfunctionTextBox"
+                             Text="{Binding Malfunction}"
+                             Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Margin="0 20">
+                        <DatePicker x:Name="NewDayDatePicker"
+                                    SelectedDate="{Binding ExpectedCompletionDate}"
+                                    FontSize="16"
+                                    Margin="0 0 0 10">
+                        </DatePicker>
+
+                        <TextBlock Text="Введите время в формате '00:00:00'"
+                                   FontSize="16"
+                                   TextWrapping="Wrap"
+                                   Margin="0 0 0 5"/>
+                        <TextBox x:Name="NewTimeTextBox"
+                                 Text="{Binding ExpectedCompletionTime}"
+                                 FontSize="16"/>
+                    </StackPanel>
+
+                    <TextBox x:Name="IssueDescriptionTextBox"
+                             Text="{Binding Malfunction}"
+                             Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+
+                    </ItemsControl>
+            </ScrollViewer>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    x:Name="GoBackButton"
+                    Content="Вернуться назад"
+                    Margin="20 10"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Padding="5"
+                    Click="GoBackButton_OnClick"/>
+
+            <Button Grid.Column="1"
+                    x:Name="SaveRequestButton"
+                    Content="Сохранить изменения"
+                    Margin="20 10"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Padding="5"
+                    Click="SaveRequestButton_OnClick"/>
+
+        </Grid>
+    </Grid>
+</Window>
