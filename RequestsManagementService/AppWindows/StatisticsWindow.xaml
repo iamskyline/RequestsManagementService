@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows"
         mc:Ignorable="d"
         Title="Статистика по заявкам"
-        MinHeight="350" MinWidth="400"
-        Height="350" Width="400"
+        MinHeight="450" MinWidth="400"
+        Height="550" Width="400"
         WindowStartupLocation="CenterScreen"
         FontSize="18">
     <Grid>
@@ -90,7 +90,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.Row="1"
-                   Text=""
+                   x:Name="TotalRequestQuantity"
                    FontSize="16"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
@@ -100,7 +100,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.Row="2"
-                   Text=""
+                   x:Name="FinishedRequestsQuantity"
                    FontSize="16"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
@@ -110,7 +110,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.Row="3"
-                   Text=""
+                   x:Name="RequestsInProcessingQuantity"
                    FontSize="16"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
@@ -120,7 +120,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.Row="4"
-                   Text=""
+                   x:Name="RequestsInExecutionProcessQuantity"
                    FontSize="16"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
@@ -130,7 +130,7 @@
 
         <TextBlock Grid.Column="1"
                    Grid.Row="5"
-                   Text=""
+                   x:Name="RequestsInPartiallyCompletedQuantity"
                    FontSize="16"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"

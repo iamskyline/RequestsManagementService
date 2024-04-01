@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using RequestsManagementService.Tools;
 
 namespace RequestsManagementService.AppWindows.RequestWindows
 {
@@ -9,6 +10,18 @@ namespace RequestsManagementService.AppWindows.RequestWindows
         public CreatingRequestWindow()
         {
             InitializeComponent();
+            DbFunctions.LoadDataToComboBoxes(ClientComboBox, StatusComboBox);
+            SetDefaultDataToDatePicker();
+        }
+
+        private void SetDefaultDataToDatePicker()
+        {
+            NewDayDatePicker.SelectedDate = DateTime.Now;
+
+            String hours = DateTime.Now.Hour.ToString();
+            String minutes = DateTime.Now.Minute.ToString();
+            String seconds = DateTime.Now.Second.ToString();
+            NewTimeTextBox.Text = $"{hours}:{minutes}:{seconds}";
         }
 
         private void GoBackButton_OnClick(Object sender, RoutedEventArgs e)

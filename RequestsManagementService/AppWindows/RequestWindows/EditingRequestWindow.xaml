@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RequestWindows"
         mc:Ignorable="d"
-        Title="EditingRequestWindow" Height="450" Width="800">
+        Title="Редактирование заявки"
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>
@@ -61,13 +63,13 @@
                            VerticalAlignment="Center"
                            FontSize="16"
                            TextWrapping="Wrap"/>
-                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
-                           Margin="0 20"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"
-                           FontSize="16"
-                           TextWrapping="Wrap"/>
                     <TextBlock Text="Заполните поле 'Описание проблемы':"
+                               Margin="0 20"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
                            Margin="0 20"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
@@ -104,6 +106,14 @@
                              MaxWidth="250"
                              MaxHeight="50"/>
 
+                    <TextBox x:Name="IssueDescriptionTextBox"
+                             Text="{Binding Malfunction}"
+                             Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+
                     <StackPanel HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Margin="0 20">
@@ -121,14 +131,6 @@
                                  Text="{Binding ExpectedCompletionTime}"
                                  FontSize="16"/>
                     </StackPanel>
-
-                    <TextBox x:Name="IssueDescriptionTextBox"
-                             Text="{Binding Malfunction}"
-                             Margin="15 20"
-                             VerticalAlignment="Center"
-                             FontSize="18"
-                             MaxWidth="250"
-                             MaxHeight="50"/>
 
                     </ItemsControl>
             </ScrollViewer>

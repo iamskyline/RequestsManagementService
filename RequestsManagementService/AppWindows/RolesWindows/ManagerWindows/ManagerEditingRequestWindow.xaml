@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.ManagerWindows"
         mc:Ignorable="d"
         Title="Изменение информации о заявке"
+        WindowStartupLocation="CenterScreen"
         MinHeight="350" MinWidth="550"
         Height="450" Width="800">
     <Grid>
@@ -93,7 +94,7 @@
                     Margin="10"
                     MaxWidth="200"
                     MaxHeight="50"
-                    FontSize="18"
+                    FontSize="16"
                     Content="Сохранить"
                     Click="SaveButton_OnClick"
             />
@@ -102,7 +103,7 @@
                     Margin="10"
                     MaxWidth="200"
                     MaxHeight="50"
-                    FontSize="18"
+                    FontSize="16"
                     Content="Назад"
                     Click="GoBackButton_OnClick"
             />

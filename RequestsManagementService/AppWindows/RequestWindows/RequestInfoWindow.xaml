@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Подробная информация о заявке"
+        WindowStartupLocation="CenterScreen"
         MinHeight="450" MinWidth="650"
         Height="450" Width="800" FontSize="18">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".1*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".15*"/>
@@ -144,7 +145,7 @@
                                TextAlignment="Center"
                                TextWrapping="Wrap"/>
 
-                    <TextBlock Text="{Binding MalfunctionType, StringFormat={}{0}}"
+                    <TextBlock Text="{Binding Malfunction, StringFormat={}{0}}"
                                Margin="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -165,7 +166,7 @@
                                TextAlignment="Center"
                                TextWrapping="Wrap"/>
 
-                    <TextBlock Text="{Binding CreatedDate, StringFormat={}{0}}"
+                    <TextBlock Text="{Binding CreatedDate, StringFormat={}{0:dd.MM.yyyy}}"
                                Margin="20"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -181,7 +182,7 @@
             Margin="20 10"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            FontSize="22"
+            FontSize="16"
             Padding="5"
             Click="GoBackButton_OnClick"
         />

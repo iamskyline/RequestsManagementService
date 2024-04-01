@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows"
         mc:Ignorable="d"
-        Title="ClientCreatingRequestWindow" Height="450" Width="800">
+        Title="Формирование новой заявки"
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>
@@ -92,7 +94,7 @@
                     Margin="20 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    FontSize="22"
+                    FontSize="16"
                     Padding="5"
                     MaxWidth="200"
                     MaxHeight="50"

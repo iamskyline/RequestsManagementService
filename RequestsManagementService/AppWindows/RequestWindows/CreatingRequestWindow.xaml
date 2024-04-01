@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Создание заявки"
+        WindowStartupLocation="CenterScreen"
         MinHeight="570" MinWidth="800"
         Height="570" Width="800">
     <Grid>
@@ -62,13 +63,13 @@
                                VerticalAlignment="Center"
                                FontSize="16"
                                TextWrapping="Wrap"/>
-                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
+                    <TextBlock Text="Заполните поле 'Описание проблемы':"
                                Margin="0 20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
                                FontSize="16"
                                TextWrapping="Wrap"/>
-                    <TextBlock Text="Заполните поле 'Описание проблемы':"
+                    <TextBlock Text="Заполните поле 'Предполагаемая дата окончания работ':"
                                Margin="0 20"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
@@ -84,12 +85,10 @@
                 <ItemsControl>
                     <ComboBox x:Name="ClientComboBox"
                               Margin="15 20"
-                              DisplayMemberPath=""
                               MaxHeight="30"
                               MaxWidth="250"/>
                     <ComboBox x:Name="StatusComboBox"
                               Margin="15 20"
-                              DisplayMemberPath=""
                               MaxWidth="250"
                               MaxHeight="30"/>
                     <TextBox x:Name="EquipmentTextBox"
@@ -105,6 +104,14 @@
                              MaxWidth="250"
                              MaxHeight="50"/>
 
+                    <TextBox x:Name="IssueDescriptionTextBox"
+                             Text="{Binding Malfunction}"
+                             Margin="15 20"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             MaxWidth="250"
+                             MaxHeight="50"/>
+
                     <StackPanel HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Margin="0 20">
@@ -113,24 +120,13 @@
                                     Margin="0 0 0 10">
                         </DatePicker>
 
-                        <TextBlock Text="Введите время в формате '00:00'"
+                        <TextBlock Text="Введите время в формате '00:00:00'"
                                    FontSize="16"
                                    TextWrapping="Wrap"
                                    Margin="0 0 0 5"/>
                         <TextBox x:Name="NewTimeTextBox" FontSize="16"/>
                     </StackPanel>
-
-                    <RichTextBox x:Name="IssueDescriptionRichTextBox"
-                                 MaxWidth="250"
-                                 MaxHeight="100"
-                                 Margin="5 20"
-                                 VerticalScrollBarVisibility="Auto">
-                        <RichTextBox.Resources>
-                            <Style TargetType="{x:Type Paragraph}">
-                                <Setter Property="Margin" Value="0,2,0,0"/>
-                            </Style>
-                        </RichTextBox.Resources>
-                    </RichTextBox>
+                    
                 </ItemsControl>
             </ScrollViewer>
 

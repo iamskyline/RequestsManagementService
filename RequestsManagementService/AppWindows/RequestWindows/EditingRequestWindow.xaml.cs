@@ -16,17 +16,7 @@ namespace RequestsManagementService.AppWindows.RequestWindows
             DataContext = _request;
             InitializeComponent();
 
-            LoadDataToComboBoxes();
-        }
-
-        private void LoadDataToComboBoxes()
-        {
-            //не работает
-            ClientComboBox.SelectedItem = _request.Users.Login;
-            ClientComboBox.ItemsSource = DbFunctions.GetAllClientsLogins();
-
-            StatusComboBox.SelectedItem = _request.Statuses.Name;
-            StatusComboBox.ItemsSource = DbFunctions.GetAllStatusNames();
+            DbFunctions.LoadDataToComboBoxes(ClientComboBox, StatusComboBox, _request);
         }
 
         private void TitlesScrollViewer_OnScrollChanged(Object sender, ScrollChangedEventArgs e)

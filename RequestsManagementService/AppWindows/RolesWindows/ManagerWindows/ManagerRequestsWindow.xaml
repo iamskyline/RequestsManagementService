@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.ManagerWindows"
         mc:Ignorable="d"
         Title="Заявки"
+        WindowStartupLocation="CenterScreen"
         MinHeight="350" MinWidth="550"
         Height="450" Width="800">
     <Grid>
@@ -86,7 +87,7 @@
                                 Margin="20 10"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Right"
-                                FontSize="20"
+                                FontSize="16"
                                 Padding="5"
                                 Click="GetRequestDetailsButton_OnClick"
                         />
@@ -96,7 +97,7 @@
                                 Margin="20 10"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Right"
-                                FontSize="20"
+                                FontSize="16"
                                 Padding="5"
                                 Click="ChangeRequestDataButton_OnClick"
                         />
@@ -144,7 +145,7 @@
                     Margin="10 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    FontSize="20"
+                    FontSize="16"
                     Padding="5"
                     Click="OpenStatisticsButton_OnClick"
             />
@@ -155,7 +156,7 @@
                     Margin="20 10"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    FontSize="20"
+                    FontSize="16"
                     Padding="5"
                     Click="LogOutButton_OnClick"
             />
