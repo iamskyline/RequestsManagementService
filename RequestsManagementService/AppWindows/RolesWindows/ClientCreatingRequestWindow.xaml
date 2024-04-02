@@ -26,7 +26,8 @@
                    Text="Создать заявку на ремонт"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
-                   FontSize="30"/>
+                   FontSize="30"
+        />
 
         <Grid Grid.Row="1" Grid.Column="1">
 
@@ -46,49 +47,54 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        TextWrapping="Wrap"
-                       FontSize="18"/>
+                       FontSize="18"
+            />
             <TextBlock Grid.Row="1" Grid.Column="0" 
                        Text="Заполните поле 'Поломка':"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        TextWrapping="Wrap"
-                       FontSize="18"/>
+                       FontSize="18"
+            />
             <TextBlock Grid.Row="2" Grid.Column="0" 
                        Text="Заполните поле 'Описание проблемы':"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        TextWrapping="Wrap"
-                       FontSize="18"/>
+                       FontSize="18"
+            />
 
-            <TextBox Grid.Row="0"
+            <TextBox x:Name="EquipmentTextBox"
+                     Grid.Row="0"
                      Grid.Column="1"
                      Margin="10 0"
                      VerticalAlignment="Center"
                      MaxWidth="250"
                      MaxHeight="50"
-                     FontSize="18"/>
-            <TextBox Grid.Row="1"
+                     FontSize="18"
+            />
+            <TextBox x:Name="MalfunctionTextBox"
+                     Grid.Row="1"
                      Grid.Column="1"
                      Margin="10 0"
                      VerticalAlignment="Center"
                      MaxWidth="250"
                      MaxHeight="50"
-                     FontSize="18"/>
-            <RichTextBox Grid.Row="2"
-                         Grid.Column="1"
-                         Margin="40 15"
-                         FontSize="18"
-                         VerticalScrollBarVisibility="Auto">
-                <RichTextBox.Resources>
-                    <Style TargetType="{x:Type Paragraph}">
-                        <Setter Property="Margin" Value="0,2,0,0"/>
-                    </Style>
-                </RichTextBox.Resources>
-            </RichTextBox>
+                     FontSize="18"
+            />
+            <TextBox x:Name="IssueDescriptionTextBox"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Margin="10 0"
+                     VerticalAlignment="Center"
+                     MaxWidth="250"
+                     MaxHeight="50"
+                     FontSize="18"
+            />
 
         </Grid>
-      
-            <Button Grid.Row="2" Grid.Column="1"
+
+        <Button Grid.Row="2" Grid.Column="1"
                     x:Name="CreateRequestButton"
                     Content="Отправить заявку"
                     Margin="20 10"
@@ -99,7 +105,7 @@
                     MaxWidth="200"
                     MaxHeight="50"
                     Click="CreateRequestButton_OnClick"
-            />
+        />
 
     </Grid>
 </Window>

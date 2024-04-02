@@ -3,17 +3,17 @@ using System.Windows;
 using System.Windows.Controls;
 using RequestsManagementService.AppWindows.RequestWindows;
 using RequestsManagementService.Models;
+using RequestsManagementService.Tools;
 
 namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
 {
-    /// <summary>
-    /// Логика взаимодействия для PerformerRequestsWindow.xaml
-    /// </summary>
     public partial class PerformerRequestsWindow : Window
     {
         public PerformerRequestsWindow()
         {
             InitializeComponent();
+
+            DbFunctions.LoadRequestsToItemsControl(RequestsItemsControl);
         }
         
         private void GetRequestDetailsButton_OnClick(Object sender, RoutedEventArgs e)

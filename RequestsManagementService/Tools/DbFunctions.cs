@@ -18,6 +18,11 @@ namespace RequestsManagementService.Tools
             return RequestsManagementEntities.GetContext().Users.Where(u => u.RoleId == 4).ToList();
         }
 
+        public static List<Users> GetAllPerformers()
+        {
+            return RequestsManagementEntities.GetContext().Users.Where(u => u.RoleId == 3).ToList();
+        }
+
         public static Users GetClientById(Int32 id)
         {
             return RequestsManagementEntities.GetContext().Users.Where(u => u.RoleId == 4).FirstOrDefault(u => u.Id == id);
@@ -33,25 +38,33 @@ namespace RequestsManagementService.Tools
             return RequestsManagementEntities.GetContext().Statuses.Select(s => s.Name).ToList();
         }
 
-        public static void LoadDataToComboBoxes(ComboBox clientComboBox, ComboBox statusComboBox, Requests request)
+        public static void FillClientsToComboBoxes(ComboBox comboBox, Requests request)
         {
             Users user = GetClientById(request.UserId);
             if (user != null)
-                clientComboBox.SelectedItem = user.Login;
+                comboBox.SelectedItem = user.Login;
 
-            clientComboBox.ItemsSource = GetAllClientsLogins();
-
-            statusComboBox.SelectedItem = request.Statuses.Name;
-            statusComboBox.ItemsSource = GetAllStatusNames();
+            comboBox.ItemsSource = GetAllClientsLogins();
         }
 
-        public static void LoadDataToComboBoxes(ComboBox clientComboBox, ComboBox statusComboBox)
+        public static void FillClientsToComboBoxes(ComboBox comboBox)
         {
-            clientComboBox.SelectedIndex = 0;
-            clientComboBox.ItemsSource = GetAllClientsLogins();
+            comboBox.SelectedIndex = 0;
+            comboBox.ItemsSource = GetAllClientsLogins();
+        }
 
-            statusComboBox.SelectedIndex = 0;
-            statusComboBox.ItemsSource = GetAllStatusNames();
+        public static void FillStatusesToComboBox(ComboBox comboBox)
+        {
+            comboBox.SelectedIndex = 0;
+            comboBox.ItemsSource = GetAllStatusNames();
+        }
+
+        public static void FillPerformersToComboBox(ComboBox comboBox)
+        {
+            List<String> performers = GetAllPerformers().Select(u => u.Login).ToList();
+            performers.Insert(0, "не выбран");
+            comboBox.SelectedIndex = 0;
+            comboBox.ItemsSource = performers;
         }
 
         public static Int32 CountAllRequests()

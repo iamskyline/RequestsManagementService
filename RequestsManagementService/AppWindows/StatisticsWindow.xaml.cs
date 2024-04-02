@@ -1,7 +1,6 @@
-﻿using System;
+﻿using RequestsManagementService.Tools;
+using System;
 using System.Windows;
-using RequestsManagementService.Models;
-using RequestsManagementService.Tools;
 
 namespace RequestsManagementService.AppWindows
 {

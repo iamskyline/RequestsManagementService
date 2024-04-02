@@ -3,9 +3,6 @@ using System.Windows;
 
 namespace RequestsManagementService.AppWindows.RolesWindows
 {
-    /// <summary>
-    /// Логика взаимодействия для ClientCreatingRequestWindow.xaml
-    /// </summary>
     public partial class ClientCreatingRequestWindow : Window
     {
         public ClientCreatingRequestWindow()

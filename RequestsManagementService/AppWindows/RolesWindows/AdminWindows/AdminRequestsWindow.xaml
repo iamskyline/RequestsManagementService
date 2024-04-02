@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Заявки"
+        Title="Заявки - Администратор"
         WindowStartupLocation="CenterScreen"
         MinHeight="350" MinWidth="550"
         Height="450" Width="800">
@@ -42,7 +42,7 @@
 
         <ScrollViewer Grid.Row="1"
                       VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="itemsControl">
+            <ItemsControl x:Name="RequestItemsControl">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="10">
@@ -72,8 +72,8 @@
                                     <TextBlock Text="Клиент: "
                                         FontSize="16"/>
                                     <TextBlock FontSize="16" TextWrapping="Wrap">
-                                        <Run Text="{Binding Users.Name}" />
                                         <Run Text="{Binding Users.Surname}" />
+                                        <Run Text="{Binding Users.Name}" />
                                         <Run Text="{Binding Users.Lastname}" />
                                     </TextBlock>
                                 </StackPanel>

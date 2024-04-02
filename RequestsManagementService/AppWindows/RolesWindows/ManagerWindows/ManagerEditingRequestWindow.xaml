@@ -65,20 +65,23 @@
                         VerticalAlignment="Center">
                 <DatePicker x:Name="NewDayDatePicker"
                             FontSize="16"
-                            Margin="0 0 0 10">
+                            Margin="0 0 0 10"
+                            SelectedDate="{Binding ExpectedCompletionDate}">
                 </DatePicker>
 
                 <TextBlock Text="Введите время в формате '00:00'"
                            FontSize="16"
                            TextWrapping="Wrap"
                            Margin="0 0 0 5"/>
-                <TextBox x:Name="NewTimeTextBox" FontSize="16"/>
+                <TextBox x:Name="NewTimeTextBox"
+                         FontSize="16"
+                         Text="{Binding ExpectedCompletionTime}"/>
             </StackPanel>
 
             <ComboBox x:Name="PerformerComboBox"
                       Grid.Row="1" Grid.Column="1"
                       MaxWidth="200"
-                      MaxHeight="40"
+                      MaxHeight="30"
             />
 
         </Grid>

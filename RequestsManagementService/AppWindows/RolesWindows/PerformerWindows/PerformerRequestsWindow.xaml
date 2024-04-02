@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Заявки"
+        Title="Заявки - Исполнитель"
         WindowStartupLocation="CenterScreen"
         MinHeight="350" MinWidth="450"
         Height="450" Width="800">
@@ -16,91 +16,116 @@
 
         <ScrollViewer Grid.Row="0"
               VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="itemsControl">
+            <ItemsControl x:Name="RequestsItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
 
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width=".5*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height=".4*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height=".4*"/>
-                        <RowDefinition Height=".4*"/>
-                    </Grid.RowDefinitions>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width=".5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".4*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height=".4*"/>
+                                <RowDefinition Height=".4*"/>
+                            </Grid.RowDefinitions>
 
-                    <Separator Margin="10 5" Height="2"
-                        Grid.ColumnSpan="2" Grid.Row="0"/>
+                            <Separator Margin="10 5" Height="2"
+                                        Grid.ColumnSpan="2" Grid.Column="0"
+                                        Grid.Row="0"
+                            />
 
-                    <StackPanel Grid.Row="1" Margin="20 0 0 0">
-                        <TextBlock Text="№1" FontSize="24"/>
-                        <TextBlock Text="Наименование оборудования: Стиральная машина"
-                            FontSize="16"
-                            TextWrapping="Wrap"/>
+                            <StackPanel Grid.Row="1" Grid.Column="0"
+                                        Margin="20 0 0 0">
 
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Клиент: "
-                                FontSize="16"/>
-                            <TextBlock Text="Имя Фамилия Отчество"
-                                FontSize="16"
-                                TextWrapping="Wrap"/>
-                        </StackPanel>
+                                <TextBlock Text="{Binding Id, StringFormat={}№{0}}" FontSize="24"/>
+                                <TextBlock Text="{Binding Equipment, StringFormat={}Наименование оборудования: {0}}"
+                                           FontSize="16"
+                                           TextWrapping="Wrap"
+                                />
 
-                        <TextBlock FontSize="16"
-                            Text="Дата добавления: 28.03.2024"
-                            TextWrapping="Wrap"/>
-                    </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Клиент: "
+                                               FontSize="16"/>
+                                    <TextBlock FontSize="16" TextWrapping="Wrap">
+                                        <Run Text="{Binding Users.Surname}" />
+                                        <Run Text="{Binding Users.Name}" />
+                                        <Run Text="{Binding Users.Lastname}" />
+                                    </TextBlock>
+                                </StackPanel>
 
-                    <StackPanel Grid.Column="1" Grid.Row="1"
-                        Margin="0 0 20 0"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                        <TextBlock Text="Статус заявки:"
-                            FontSize="16"
-                            TextAlignment="Center"/>
-                        <TextBlock Text="В обработке"
-                            FontSize="16"
-                            TextAlignment="Center"/>
-                    </StackPanel>
+                                <TextBlock FontSize="16"
+                                           Text="{Binding CreatedDate, StringFormat={}Дата добавления: {0:dd.MM.yyyy}}"
+                                           TextWrapping="Wrap"
+                                />
 
-                    <StackPanel Grid.Row="2"
-                            Grid.ColumnSpan="2"
-                            Orientation="Horizontal">
+                            </StackPanel>
 
-                        <Button x:Name="GetRequestDetailsButton"
-                                Content="Детали заявки"
-                                Margin="20 10"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Right"
-                                FontSize="16"
-                                Padding="5"
-                                Click="GetRequestDetailsButton_OnClick"/>
-                        
-                        <Button x:Name="GetToWorkButton"
-                                Content="Взять в работу"
-                                Margin="20 10"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Right"
-                                FontSize="16"
-                                Padding="5"
-                                Click="GetToWorkButton_OnClick"/>
+                            <StackPanel Grid.Column="1" Grid.Row="1"
+                                        Margin="0 0 20 0"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center">
 
-                        <Button x:Name="AddCommentButton"
-                                Content="Оставить комментарий"
-                                Margin="20 10"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Right"
-                                FontSize="16"
-                                Padding="5"
-                                Click="AddCommentButton_OnClick"/>
-                    </StackPanel>
+                                <TextBlock Text="Статус заявки:"
+                                           FontSize="16"
+                                           TextAlignment="Center"
+                                />
 
-                    <StackPanel Grid.ColumnSpan="2" Grid.Row="4">
-                        <Separator Margin="10 5" Height="2"/>
-                    </StackPanel>
-                </Grid>
-                
+                                <TextBlock Text="{Binding Statuses.Name, StringFormat={}{0}}"
+                                           FontSize="16"
+                                           TextAlignment="Center"
+                                />
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2"
+                                        Grid.ColumnSpan="2" Grid.Column="0"
+                                        Orientation="Horizontal">
+
+                                <Button x:Name="GetRequestDetailsButton"
+                                        Content="Детали заявки"
+                                        Margin="20 10"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        FontSize="16"
+                                        Padding="5"
+                                        Click="GetRequestDetailsButton_OnClick"
+                                />
+
+                                <Button x:Name="GetToWorkButton"
+                                        Content="Взять в работу"
+                                        Margin="20 10"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        FontSize="16"
+                                        Padding="5"
+                                        Click="GetToWorkButton_OnClick"
+                                />
+
+                                <Button x:Name="AddCommentButton"
+                                        Content="Оставить комментарий"
+                                        Margin="20 10"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        FontSize="16"
+                                        Padding="5"
+                                        Click="AddCommentButton_OnClick"
+                                />
+
+                            </StackPanel>
+
+                            <StackPanel Grid.ColumnSpan="2" Grid.Column="0"
+                                        Grid.Row="3">
+                                <Separator Margin="10 5"
+                                           Height="2"
+                                />
+                            </StackPanel>
+                        </Grid>
+
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
 
@@ -118,16 +143,18 @@
                            TextAlignment="Center"
                            TextWrapping="Wrap"
                            FontSize="16"
-                           Margin="0 0 0 5"/>
+                           Margin="0 0 0 5"
+                />
                 <TextBox x:Name="SearchTextBox"
                          Margin="30 0"
                          VerticalAlignment="Center"
                          FontSize="18"
                          MaxWidth="250"
                          MaxHeight="50"
-                         TextChanged="SearchTextBox_OnTextChanged"/>
+                         TextChanged="SearchTextBox_OnTextChanged"
+                />
             </StackPanel>
-            
+
             <Button x:Name="LogOutButton"
                     Grid.Column="2"
                     Content="Выйти из кабинета"
@@ -136,7 +163,8 @@
                     HorizontalAlignment="Center"
                     FontSize="16"
                     Padding="5"
-                    Click="LogOutButton_OnClick"/>
+                    Click="LogOutButton_OnClick"
+            />
 
         </Grid>
     </Grid>

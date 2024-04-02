@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:RequestsManagementService.AppWindows.RolesWindows.PerformerWindows"
         mc:Ignorable="d"
         Title="Комментарий к заявке"
-        MinHeight="350" MinWidth="400"
-        Height="350" Width="400"
+        MinHeight="250" MinWidth="400"
+        Height="250" Width="400"
         WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height=".2*"/>
         </Grid.RowDefinitions>
 
@@ -23,19 +23,16 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 0"
-                       DockPanel.Dock="Top"/>
+                       DockPanel.Dock="Top"
+            />
 
-            <RichTextBox Margin="20"
-                         VerticalScrollBarVisibility="Auto"
-                         FontSize="16"
-                         MaxWidth="500"
-                         MaxHeight="300">
-                <RichTextBox.Resources>
-                    <Style TargetType="{x:Type Paragraph}">
-                        <Setter Property="Margin" Value="0,2,0,0"/>
-                    </Style>
-                </RichTextBox.Resources>
-            </RichTextBox>
+            <TextBox x:Name="CommentTextBox"
+                     Margin="20"
+                     VerticalScrollBarVisibility="Auto"
+                     FontSize="20"
+                     MaxWidth="500"
+                     MaxHeight="30"
+            />
 
         </DockPanel>
 
@@ -46,6 +43,7 @@
                 FontSize="16"
                 MaxWidth="200"
                 MaxHeight="50"
-                Click="SaveCommentButton_OnClick"/>
+                Click="SaveCommentButton_OnClick"
+        />
     </Grid>
 </Window>

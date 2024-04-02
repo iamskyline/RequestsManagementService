@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using RequestsManagementService.AppWindows.RequestWindows;
 using RequestsManagementService.Models;
+using RequestsManagementService.Tools;
 
 namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
 {
@@ -11,6 +12,8 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
         public ManagerRequestsWindow()
         {
             InitializeComponent();
+
+            DbFunctions.LoadRequestsToItemsControl(RequestItemsControl);
         }
 
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
@@ -40,7 +43,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
 
         private void ChangeRequestDataButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            ManagerEditingRequestWindow window = new ManagerEditingRequestWindow();
+            ManagerEditingRequestWindow window = new ManagerEditingRequestWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
         }
     }

@@ -10,13 +10,14 @@ namespace RequestsManagementService.AppWindows.RequestWindows
         public CreatingRequestWindow()
         {
             InitializeComponent();
-            DbFunctions.LoadDataToComboBoxes(ClientComboBox, StatusComboBox);
+            DbFunctions.FillClientsToComboBoxes(ClientComboBox);
+            DbFunctions.FillStatusesToComboBox(StatusComboBox);
             SetDefaultDataToDatePicker();
         }
 
         private void SetDefaultDataToDatePicker()
         {
-            NewDayDatePicker.SelectedDate = DateTime.Now;
+            NewDayDatePicker.SelectedDate = DateTime.Now.AddDays(3);
 
             String hours = DateTime.Now.Hour.ToString();
             String minutes = DateTime.Now.Minute.ToString();

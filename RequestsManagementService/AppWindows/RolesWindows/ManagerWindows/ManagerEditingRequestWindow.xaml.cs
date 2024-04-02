@@ -1,13 +1,21 @@
-﻿using System;
+﻿using RequestsManagementService.Models;
+using RequestsManagementService.Tools;
+using System;
 using System.Windows;
 
 namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
 {
     public partial class ManagerEditingRequestWindow : Window
     {
-        public ManagerEditingRequestWindow()
+        private Requests _request;
+
+        public ManagerEditingRequestWindow(Requests request)
         {
+            _request = request;
+            DataContext = _request;
             InitializeComponent();
+
+            DbFunctions.FillPerformersToComboBox(PerformerComboBox);
         }
 
         private void SaveButton_OnClick(Object sender, RoutedEventArgs e)

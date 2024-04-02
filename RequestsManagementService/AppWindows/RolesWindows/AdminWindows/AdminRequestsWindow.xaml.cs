@@ -12,7 +12,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
         public AdminRequestsWindow()
         {
             InitializeComponent();
-            DbFunctions.LoadRequestsToItemsControl(itemsControl);
+            DbFunctions.LoadRequestsToItemsControl(RequestItemsControl);
         }
 
         private void EditRequestButton_OnClick(Object sender, RoutedEventArgs e)
