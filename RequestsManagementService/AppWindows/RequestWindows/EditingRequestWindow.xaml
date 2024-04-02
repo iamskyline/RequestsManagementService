@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Редактирование заявки"
         WindowStartupLocation="CenterScreen"
-        Height="450" Width="800">
+        Height="450" Width="800"
+        MinHeight="350" MinWidth="550">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>

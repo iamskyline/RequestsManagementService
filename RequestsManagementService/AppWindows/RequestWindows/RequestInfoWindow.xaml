@@ -7,7 +7,8 @@
         Title="Подробная информация о заявке"
         WindowStartupLocation="CenterScreen"
         MinHeight="450" MinWidth="650"
-        Height="450" Width="800" FontSize="18">
+        Height="450" Width="800"
+        FontSize="18">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".1*"/>

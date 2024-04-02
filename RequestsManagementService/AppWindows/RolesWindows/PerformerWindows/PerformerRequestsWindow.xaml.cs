@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using RequestsManagementService.AppWindows.RequestWindows;
@@ -9,11 +10,14 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
 {
     public partial class PerformerRequestsWindow : Window
     {
+        private List<Requests> _allRequests;
+
         public PerformerRequestsWindow()
         {
             InitializeComponent();
 
-            DbFunctions.LoadRequestsToItemsControl(RequestsItemsControl);
+            _allRequests = DbFunctions.GetAllRequests();
+            RequestsItemsControl.ItemsSource = _allRequests;
         }
         
         private void GetRequestDetailsButton_OnClick(Object sender, RoutedEventArgs e)
@@ -37,7 +41,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
 
         private void SearchTextBox_OnTextChanged(Object sender, TextChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            Searching.Search(_allRequests, SearchTextBox, RequestsItemsControl);
         }
 
         private void AddCommentButton_OnClick(Object sender, RoutedEventArgs e)

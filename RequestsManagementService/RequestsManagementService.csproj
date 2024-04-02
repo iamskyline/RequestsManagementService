@@ -130,7 +130,10 @@
     <Compile Include="Models\Work.cs">
       <DependentUpon>RequestsManagementModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tools\ComboBoxesFilling.cs" />
     <Compile Include="Tools\DbFunctions.cs" />
+    <Compile Include="Tools\DbStatisticsCalculations.cs" />
+    <Compile Include="Tools\Searching.cs" />
     <Page Include="AppWindows\RequestWindows\CreatingRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -17,7 +17,7 @@
 
         <ScrollViewer Grid.Row="0"
                       VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="RequestItemsControl">
+            <ItemsControl x:Name="RequestsItemsControl">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
 

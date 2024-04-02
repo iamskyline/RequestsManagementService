@@ -38,58 +38,9 @@ namespace RequestsManagementService.Tools
             return RequestsManagementEntities.GetContext().Statuses.Select(s => s.Name).ToList();
         }
 
-        public static void FillClientsToComboBoxes(ComboBox comboBox, Requests request)
+        public static List<Requests> GetAllRequests()
         {
-            Users user = GetClientById(request.UserId);
-            if (user != null)
-                comboBox.SelectedItem = user.Login;
-
-            comboBox.ItemsSource = GetAllClientsLogins();
-        }
-
-        public static void FillClientsToComboBoxes(ComboBox comboBox)
-        {
-            comboBox.SelectedIndex = 0;
-            comboBox.ItemsSource = GetAllClientsLogins();
-        }
-
-        public static void FillStatusesToComboBox(ComboBox comboBox)
-        {
-            comboBox.SelectedIndex = 0;
-            comboBox.ItemsSource = GetAllStatusNames();
-        }
-
-        public static void FillPerformersToComboBox(ComboBox comboBox)
-        {
-            List<String> performers = GetAllPerformers().Select(u => u.Login).ToList();
-            performers.Insert(0, "не выбран");
-            comboBox.SelectedIndex = 0;
-            comboBox.ItemsSource = performers;
-        }
-
-        public static Int32 CountAllRequests()
-        {
-            return RequestsManagementEntities.GetContext().Requests.Count();
-        }
-
-        public static Int32 CountFinishedRequests()
-        {
-            return RequestsManagementEntities.GetContext().Requests.Count(r => r.StatusId == 3);
-        }
-
-        public static Int32 CountRequestsInProcessing()
-        {
-            return RequestsManagementEntities.GetContext().Requests.Count(r => r.StatusId == 1);
-        }
-
-        public static Int32 CountRequestsInExecutionProcess()
-        {
-            return RequestsManagementEntities.GetContext().Requests.Count(r => r.StatusId == 2);
-        }
-
-        public static Int32 CountRequestsInPartiallyCompleted()
-        {
-            return RequestsManagementEntities.GetContext().Requests.Count(r => r.StatusId == 4);
+            return RequestsManagementEntities.GetContext().Requests.ToList();
         }
     }
 }

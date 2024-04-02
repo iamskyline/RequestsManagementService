@@ -15,7 +15,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
             DataContext = _request;
             InitializeComponent();
 
-            DbFunctions.FillPerformersToComboBox(PerformerComboBox);
+            ComboBoxesFilling.FillPerformersToComboBox(PerformerComboBox);
         }
 
         private void SaveButton_OnClick(Object sender, RoutedEventArgs e)

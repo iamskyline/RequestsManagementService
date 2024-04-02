@@ -10,11 +10,11 @@ namespace RequestsManagementService.AppWindows
         {
             InitializeComponent();
 
-            TotalRequestQuantity.Text = DbFunctions.CountAllRequests().ToString();
-            FinishedRequestsQuantity.Text = DbFunctions.CountFinishedRequests().ToString();
-            RequestsInProcessingQuantity.Text = DbFunctions.CountRequestsInProcessing().ToString();
-            RequestsInExecutionProcessQuantity.Text = DbFunctions.CountRequestsInExecutionProcess().ToString();
-            RequestsInPartiallyCompletedQuantity.Text = DbFunctions.CountRequestsInPartiallyCompleted().ToString();
+            TotalRequestQuantity.Text = DbStatisticsCalculations.CountAllRequests().ToString();
+            FinishedRequestsQuantity.Text = DbStatisticsCalculations.CountFinishedRequests().ToString();
+            RequestsInProcessingQuantity.Text = DbStatisticsCalculations.CountRequestsInProcessing().ToString();
+            RequestsInExecutionProcessQuantity.Text = DbStatisticsCalculations.CountRequestsInExecutionProcess().ToString();
+            RequestsInPartiallyCompletedQuantity.Text = DbStatisticsCalculations.CountRequestsInPartiallyCompleted().ToString();
         }
 
         private void GoBackButton_OnClick(Object sender, RoutedEventArgs e)

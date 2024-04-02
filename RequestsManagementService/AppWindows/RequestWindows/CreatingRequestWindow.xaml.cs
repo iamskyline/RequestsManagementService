@@ -10,8 +10,8 @@ namespace RequestsManagementService.AppWindows.RequestWindows
         public CreatingRequestWindow()
         {
             InitializeComponent();
-            DbFunctions.FillClientsToComboBoxes(ClientComboBox);
-            DbFunctions.FillStatusesToComboBox(StatusComboBox);
+            ComboBoxesFilling.FillClientsToComboBoxes(ClientComboBox);
+            ComboBoxesFilling.FillStatusesToComboBox(StatusComboBox);
             SetDefaultDataToDatePicker();
         }
 

@@ -16,8 +16,8 @@ namespace RequestsManagementService.AppWindows.RequestWindows
             DataContext = _request;
             InitializeComponent();
 
-            DbFunctions.FillClientsToComboBoxes(ClientComboBox, _request);
-            DbFunctions.FillStatusesToComboBox(StatusComboBox);
+            ComboBoxesFilling.FillClientsToComboBoxes(ClientComboBox, _request);
+            ComboBoxesFilling.FillStatusesToComboBox(StatusComboBox);
         }
 
         private void TitlesScrollViewer_OnScrollChanged(Object sender, ScrollChangedEventArgs e)
