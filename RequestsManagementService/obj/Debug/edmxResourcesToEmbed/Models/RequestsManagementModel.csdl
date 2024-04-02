@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RequestsManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ExecutionRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequestId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__Execution__Reque__4CA06362" FromRole="ExecutionRequests" ToRole="Requests" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Execution__UserI__4D94879B" FromRole="ExecutionRequests" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Materials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="RestOfMaterial" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RequestMaterials" Relationship="Self.FK__RequestMa__Mater__5070F446" FromRole="Materials" ToRole="RequestMaterials" />
+  </EntityType>
+  <EntityType Name="RequestMaterials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialId" Type="Int32" Nullable="false" />
+    <Property Name="RequestId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Materials" Relationship="Self.FK__RequestMa__Mater__5070F446" FromRole="RequestMaterials" ToRole="Materials" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__RequestMa__Reque__5165187F" FromRole="RequestMaterials" ToRole="Requests" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Equipment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Malfunction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IssueDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExpectedCompletionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpectedCompletionTime" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="ExecutionRequests" Relationship="Self.FK__Execution__Reque__4CA06362" FromRole="Requests" ToRole="ExecutionRequests" />
+    <NavigationProperty Name="RequestMaterials" Relationship="Self.FK__RequestMa__Reque__5165187F" FromRole="Requests" ToRole="RequestMaterials" />
+    <NavigationProperty Name="Statuses" Relationship="Self.FK__Requests__Status__49C3F6B7" FromRole="Requests" ToRole="Statuses" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Requests__UserId__48CFD27E" FromRole="Requests" ToRole="Users" />
+    <NavigationProperty Name="RequestWorks" Relationship="Self.FK__RequestWo__Reque__5441852A" FromRole="Requests" ToRole="RequestWorks" />
+  </EntityType>
+  <EntityType Name="RequestWorks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequestId" Type="Int32" Nullable="false" />
+    <Property Name="WorkId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__RequestWo__Reque__5441852A" FromRole="RequestWorks" ToRole="Requests" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__RequestWo__UserI__5629CD9C" FromRole="RequestWorks" ToRole="Users" />
+    <NavigationProperty Name="Work" Relationship="Self.FK__RequestWo__WorkI__5535A963" FromRole="RequestWorks" ToRole="Work" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__RoleId__45F365D3" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__Requests__Status__49C3F6B7" FromRole="Statuses" ToRole="Requests" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ExecutionRequests" Relationship="Self.FK__Execution__UserI__4D94879B" FromRole="Users" ToRole="ExecutionRequests" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__Requests__UserId__48CFD27E" FromRole="Users" ToRole="Requests" />
+    <NavigationProperty Name="RequestWorks" Relationship="Self.FK__RequestWo__UserI__5629CD9C" FromRole="Users" ToRole="RequestWorks" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK__Users__RoleId__45F365D3" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Work">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="RequestWorks" Relationship="Self.FK__RequestWo__WorkI__5535A963" FromRole="Work" ToRole="RequestWorks" />
+  </EntityType>
+  <Association Name="FK__Execution__Reque__4CA06362">
+    <End Role="Requests" Type="Self.Requests" Multiplicity="1" />
+    <End Role="ExecutionRequests" Type="Self.ExecutionRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExecutionRequests">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Execution__UserI__4D94879B">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ExecutionRequests" Type="Self.ExecutionRequests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExecutionRequests">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RequestMa__Mater__5070F446">
+    <End Role="Materials" Type="Self.Materials" Multiplicity="1" />
+    <End Role="RequestMaterials" Type="Self.RequestMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materials">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestMaterials">
+        <PropertyRef Name="MaterialId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RequestMa__Reque__5165187F">
+    <End Role="Requests" Type="Self.Requests" Multiplicity="1" />
+    <End Role="RequestMaterials" Type="Self.RequestMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestMaterials">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Requests__Status__49C3F6B7">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Requests__UserId__48CFD27E">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RequestWo__Reque__5441852A">
+    <End Role="Requests" Type="Self.Requests" Multiplicity="1" />
+    <End Role="RequestWorks" Type="Self.RequestWorks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestWorks">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RequestWo__UserI__5629CD9C">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="RequestWorks" Type="Self.RequestWorks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestWorks">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RequestWo__WorkI__5535A963">
+    <End Role="Work" Type="Self.Work" Multiplicity="1" />
+    <End Role="RequestWorks" Type="Self.RequestWorks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestWorks">
+        <PropertyRef Name="WorkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__RoleId__45F365D3">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RequestsManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ExecutionRequests" EntityType="Self.ExecutionRequests" />
+    <EntitySet Name="Materials" EntityType="Self.Materials" />
+    <EntitySet Name="RequestMaterials" EntityType="Self.RequestMaterials" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" />
+    <EntitySet Name="RequestWorks" EntityType="Self.RequestWorks" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Work" EntityType="Self.Work" />
+    <AssociationSet Name="FK__Execution__Reque__4CA06362" Association="Self.FK__Execution__Reque__4CA06362">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="ExecutionRequests" EntitySet="ExecutionRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Execution__UserI__4D94879B" Association="Self.FK__Execution__UserI__4D94879B">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ExecutionRequests" EntitySet="ExecutionRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RequestMa__Mater__5070F446" Association="Self.FK__RequestMa__Mater__5070F446">
+      <End Role="Materials" EntitySet="Materials" />
+      <End Role="RequestMaterials" EntitySet="RequestMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RequestMa__Reque__5165187F" Association="Self.FK__RequestMa__Reque__5165187F">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="RequestMaterials" EntitySet="RequestMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Requests__Status__49C3F6B7" Association="Self.FK__Requests__Status__49C3F6B7">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Requests" EntitySet="Requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Requests__UserId__48CFD27E" Association="Self.FK__Requests__UserId__48CFD27E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Requests" EntitySet="Requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RequestWo__Reque__5441852A" Association="Self.FK__RequestWo__Reque__5441852A">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="RequestWorks" EntitySet="RequestWorks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RequestWo__UserI__5629CD9C" Association="Self.FK__RequestWo__UserI__5629CD9C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RequestWorks" EntitySet="RequestWorks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RequestWo__WorkI__5535A963" Association="Self.FK__RequestWo__WorkI__5535A963">
+      <End Role="Work" EntitySet="Work" />
+      <End Role="RequestWorks" EntitySet="RequestWorks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__RoleId__45F365D3" Association="Self.FK__Users__RoleId__45F365D3">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

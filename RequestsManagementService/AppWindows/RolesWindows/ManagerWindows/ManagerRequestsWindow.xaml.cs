@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using RequestsManagementService.AppWindows.RequestWindows;
@@ -22,7 +23,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
 
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            //сбросить пользователя
+            Storage.SystemUser = null;
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();

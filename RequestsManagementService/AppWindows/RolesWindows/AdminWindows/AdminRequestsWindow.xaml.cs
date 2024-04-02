@@ -34,7 +34,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
 
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            //сбросить пользователя
+            Storage.SystemUser = null;
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();
@@ -44,6 +44,9 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
         {
             CreatingRequestWindow window = new CreatingRequestWindow();
             window.ShowDialog();
+
+            RequestsItemsControl.ItemsSource = null;
+            RequestsItemsControl.ItemsSource = DbFunctions.GetAllRequests();
         }
 
         private void SearchTextBox_OnTextChanged(Object sender, TextChangedEventArgs e)

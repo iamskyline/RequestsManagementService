@@ -108,7 +108,7 @@
                              MaxHeight="50"/>
 
                     <TextBox x:Name="IssueDescriptionTextBox"
-                             Text="{Binding Malfunction}"
+                             Text="{Binding IssueDescription}"
                              Margin="15 20"
                              VerticalAlignment="Center"
                              FontSize="18"

@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RequestsManagementModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RequestStatus.cs" />
     <Compile Include="Models\RequestWorks.cs">
       <DependentUpon>RequestsManagementModel.tt</DependentUpon>
     </Compile>
@@ -124,6 +125,8 @@
     <Compile Include="Models\Statuses.cs">
       <DependentUpon>RequestsManagementModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Storage.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Users.cs">
       <DependentUpon>RequestsManagementModel.tt</DependentUpon>
     </Compile>
@@ -134,6 +137,7 @@
     <Compile Include="Tools\DbFunctions.cs" />
     <Compile Include="Tools\DbStatisticsCalculations.cs" />
     <Compile Include="Tools\Searching.cs" />
+    <Compile Include="Tools\Validation.cs" />
     <Page Include="AppWindows\RequestWindows\CreatingRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
