@@ -40,3 +40,5 @@ C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManage
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.csproj.CopyComplete
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.exe
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\RequestsManagementService.pdb
+C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\PerformerWindows\PerformerExecuteRequestWindow.g.cs
+C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\obj\Debug\AppWindows\RolesWindows\PerformerWindows\PerformerExecuteRequestWindow.baml

@@ -85,6 +85,9 @@
     <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml.cs">
       <DependentUpon>PerformerCommentWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerExecuteRequestWindow.xaml.cs">
+      <DependentUpon>PerformerExecuteRequestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.xaml.cs">
       <DependentUpon>PerformerRequestsWindow.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppWindows\RolesWindows\PerformerWindows\PerformerExecuteRequestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

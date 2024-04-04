@@ -29,42 +29,11 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
 
         private void GetToWorkButton_OnClick(Object sender, RoutedEventArgs e)
         {
-            Requests selectedRequest = (sender as Button).DataContext as Requests;
+            PerformerExecuteRequestWindow window = new PerformerExecuteRequestWindow((sender as Button).DataContext as Requests);
+            window.ShowDialog();
 
-            if (selectedRequest.StatusId != (Int32)RequestStatus.Finished && selectedRequest.StatusId != (Int32)RequestStatus.InExecution)
-            {
-                try
-                {
-                    MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите взять заявку в работу?",
-                        "Взять заявку в работу", MessageBoxButton.YesNo,
-                        MessageBoxImage.Warning);
-
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        using (RequestsManagementEntities context = new RequestsManagementEntities())
-                        {
-                            Requests request = context.Requests.Find(selectedRequest.Id);
-                            request.StatusId = (Int32)RequestStatus.InExecution;
-
-                            context.SaveChanges();
-
-                            MessageBox.Show("Заявка взята в работу!",
-                                "Успех!", MessageBoxButton.OK,
-                                MessageBoxImage.Information);
-                        }
-                    }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Ошибка! Вы не можете взять уже завершенную " +
-                                "заявку или заявку, которая уже выполняется",
-                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            RequestsItemsControl.ItemsSource = null;
+            RequestsItemsControl.ItemsSource = DbFunctions.GetAllRequests();
         }
 
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)

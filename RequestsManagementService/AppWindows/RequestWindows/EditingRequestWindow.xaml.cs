@@ -1,10 +1,9 @@
-﻿using System;
-using RequestsManagementService.Models;
+﻿using RequestsManagementService.Models;
+using RequestsManagementService.Tools;
+using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using RequestsManagementService.Tools;
-using System.Linq;
-using System.Text;
 using Validation = RequestsManagementService.Tools.Validation;
 
 namespace RequestsManagementService.AppWindows.RequestWindows
