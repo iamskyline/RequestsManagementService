@@ -1,6 +1,7 @@
 ﻿using RequestsManagementService.Models;
 using RequestsManagementService.Tools;
 using System;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 
@@ -56,6 +57,11 @@ namespace RequestsManagementService.AppWindows.RolesWindows
                     MessageBoxButton.OK, MessageBoxImage.Error
                 );
             }
+        }
+
+        private void ClientCreatingRequestWindow_OnClosing(Object sender, CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

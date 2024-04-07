@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\1234f\Desktop\Практика\RequestsManagementService\RequestsManagementService\App.xaml
-121810947629
-2-1924654407
-36-1773556360
-181356754945
+12-319876197
+2-1731672578
+36-419643610
+18661631950
 AppWindows\RequestWindows\CreatingRequestWindow.xaml;AppWindows\RequestWindows\EditingRequestWindow.xaml;AppWindows\RequestWindows\RequestInfoWindow.xaml;AppWindows\RolesWindows\AdminWindows\AdminRequestsWindow.xaml;AppWindows\MainWindow.xaml;AppWindows\RolesWindows\ClientCreatingRequestWindow.xaml;AppWindows\RolesWindows\ManagerWindows\ManagerEditingRequestWindow.xaml;AppWindows\RolesWindows\ManagerWindows\ManagerRequestsWindow.xaml;AppWindows\RolesWindows\PerformerWindows\PerformerCommentWindow.xaml;AppWindows\RolesWindows\PerformerWindows\PerformerExecuteRequestWindow.xaml;AppWindows\RolesWindows\PerformerWindows\PerformerRequestsWindow.xaml;AppWindows\StatisticsWindow.xaml;
 
-False
+True
 

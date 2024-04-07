@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -50,6 +51,11 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
         {
             ManagerEditingRequestWindow window = new ManagerEditingRequestWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
+        }
+
+        private void ManagerRequestsWindow_OnClosing(Object sender, CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

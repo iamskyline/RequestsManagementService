@@ -2,6 +2,7 @@
 using RequestsManagementService.Tools;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -58,6 +59,11 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
         {
             StatisticsWindow window = new StatisticsWindow();
             window.ShowDialog();
+        }
+
+        private void AdminRequestsWindow_OnClosing(Object sender, CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

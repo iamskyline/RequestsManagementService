@@ -7,7 +7,8 @@
         Title="Заявки - Исполнитель"
         WindowStartupLocation="CenterScreen"
         MinHeight="350" MinWidth="450"
-        Height="450" Width="800">
+        Height="450" Width="800"
+        Closing="PerformerRequestsWindow_OnClosing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

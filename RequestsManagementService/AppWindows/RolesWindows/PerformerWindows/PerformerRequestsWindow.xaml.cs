@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,6 +54,11 @@ namespace RequestsManagementService.AppWindows.RolesWindows.PerformerWindows
         {
             PerformerCommentWindow window = new PerformerCommentWindow((sender as Button).DataContext as Requests);
             window.ShowDialog();
+        }
+
+        private void PerformerRequestsWindow_OnClosing(Object sender, CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
