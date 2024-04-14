@@ -36,8 +36,6 @@ namespace RequestsManagementService.AppWindows.RolesWindows.AdminWindows
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
         {
             Storage.SystemUser = null;
-            MainWindow window = new MainWindow();
-            window.Show();
             this.Close();
         }
 

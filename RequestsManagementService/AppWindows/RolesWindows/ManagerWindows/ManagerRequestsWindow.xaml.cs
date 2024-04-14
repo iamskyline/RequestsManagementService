@@ -25,8 +25,6 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
         private void LogOutButton_OnClick(Object sender, RoutedEventArgs e)
         {
             Storage.SystemUser = null;
-            MainWindow window = new MainWindow();
-            window.Show();
             this.Close();
         }
 

@@ -45,7 +45,7 @@ namespace RequestsManagementService.AppWindows.RolesWindows.ManagerWindows
 
                             context.ExecutionRequests.Add(newExecutionRequest);
                             context.SaveChanges();
-                            MessageBox.Show("Заявка успешно создана!", "Успех!", MessageBoxButton.OK,
+                            MessageBox.Show("Заявка успешно сохранена!", "Успех!", MessageBoxButton.OK,
                                 MessageBoxImage.Information);
                             this.Close();
                         }
